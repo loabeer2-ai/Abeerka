@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURORA - Restaurant & Dining</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Homepage -->
+    <div id="homepage" class="page active">
+        <div class="hero">
+            <h1 class="aurora-title" id="auroraTitle">AURORA</h1>
+            <p class="subtitle">Restaurant & Dining</p>
+        </div>
+    </div>
+
+    <!-- Interactive Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay">
+        <div class="menu-content">
+            <button class="menu-close" id="menuClose">&times;</button>
+            <h2 class="menu-title">Welcome to AURORA</h2>
+            <div class="menu-options">
+                <button class="menu-option" data-page="food-menu">
+                    <span class="option-icon">🍣</span>
+                    <span class="option-text">Food Menu</span>
+                </button>
+                <button class="menu-option" data-page="price-list">
+                    <span class="option-icon">💰</span>
+                    <span class="option-text">Price List</span>
+                </button>
+                <button class="menu-option" data-page="contact">
+                    <span class="option-icon">📞</span>
+                    <span class="option-text">Contact Us</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Food Menu Page -->
+    <div id="food-menu" class="page">
+        <nav class="page-nav">
+            <button class="nav-back" id="foodMenuBack">← Back to Home</button>
+        </nav>
+        <div class="page-content">
+            <h1 class="page-title">Our Menu</h1>
+            
+            <div class="menu-category">
+                <h2 class="category-title">Starters</h2>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Miso Soup</h3>
+                        <p class="dish-description">Traditional Japanese soup with tofu, seaweed, and scallions</p>
+                        <div class="dish-price">$4.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Edamame</h3>
+                        <p class="dish-description">Steamed soybeans seasoned with sea salt</p>
+                        <div class="dish-price">$5.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Gyoza</h3>
+                        <p class="dish-description">Pan-fried dumplings filled with pork and vegetables</p>
+                        <div class="dish-price">$8.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="category-title">Main Courses</h2>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Dragon Roll</h3>
+                        <p class="dish-description">Eel and avocado roll topped with eel sauce</p>
+                        <div class="dish-price">$16.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Rainbow Roll</h3>
+                        <p class="dish-description">California roll topped with assorted sashimi</p>
+                        <div class="dish-price">$18.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Spicy Tuna Roll</h3>
+                        <p class="dish-description">Fresh tuna with spicy mayo and cucumber</p>
+                        <div class="dish-price">$14.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Salmon Nigiri</h3>
+                        <p class="dish-description">Fresh salmon over vinegared rice</p>
+                        <div class="dish-price">$6.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Tempura Udon</h3>
+                        <p class="dish-description">Thick noodles in broth with tempura shrimp</p>
+                        <div class="dish-price">$15.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Chicken Teriyaki</h3>
+                        <p class="dish-description">Grilled chicken with teriyaki sauce</p>
+                        <div class="dish-price">$17.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="category-title">Desserts</h2>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Mochi Ice Cream</h3>
+                        <p class="dish-description">Soft rice cake filled with ice cream</p>
+                        <div class="dish-price">$8.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Green Tea Cake</h3>
+                        <p class="dish-description">Matcha-flavored sponge cake with cream</p>
+                        <div class="dish-price">$9.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="category-title">Drinks</h2>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Sake</h3>
+                        <p class="dish-description">Traditional Japanese rice wine</p>
+                        <div class="dish-price">$12.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Green Tea</h3>
+                        <p class="dish-description">Premium Japanese green tea</p>
+                        <div class="dish-price">$3.00</div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image"></div>
+                        <h3 class="dish-name">Japanese Beer</h3>
+                        <p class="dish-description">Ice-cold Japanese draft beer</p>
+                        <div class="dish-price">$7.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Price List Page -->
+    <div id="price-list" class="page">
+        <nav class="page-nav">
+            <button class="nav-back" id="priceListBack">← Back to Home</button>
+        </nav>
+        <div class="page-content">
+            <h1 class="page-title">Price List</h1>
+            
+            <div class="price-section">
+                <h2 class="price-category">Starters</h2>
+                <div class="price-items">
+                    <div class="price-item">
+                        <span class="price-name">Miso Soup</span>
+                        <span class="price-value">$4.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Edamame</span>
+                        <span class="price-value">$5.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Gyoza (6 pieces)</span>
+                        <span class="price-value">$8.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <h2 class="price-category">Main Courses</h2>
+                <div class="price-items">
+                    <div class="price-item">
+                        <span class="price-name">Dragon Roll</span>
+                        <span class="price-value">$16.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Rainbow Roll</span>
+                        <span class="price-value">$18.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Spicy Tuna Roll</span>
+                        <span class="price-value">$14.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Salmon Nigiri (2 pieces)</span>
+                        <span class="price-value">$6.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Tempura Udon</span>
+                        <span class="price-value">$15.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Chicken Teriyaki</span>
+                        <span class="price-value">$17.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <h2 class="price-category">Desserts</h2>
+                <div class="price-items">
+                    <div class="price-item">
+                        <span class="price-name">Mochi Ice Cream (3 pieces)</span>
+                        <span class="price-value">$8.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Green Tea Cake</span>
+                        <span class="price-value">$9.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <h2 class="price-category">Drinks</h2>
+                <div class="price-items">
+                    <div class="price-item">
+                        <span class="price-name">Sake (Hot/Cold)</span>
+                        <span class="price-value">$12.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Green Tea</span>
+                        <span class="price-value">$3.00</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-name">Japanese Beer</span>
+                        <span class="price-value">$7.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <nav class="page-nav">
+            <button class="nav-back" id="contactBack">← Back to Home</button>
+        </nav>
+        <div class="page-content">
+            <h1 class="page-title">Contact Us</h1>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Location</h3>
+                        <p>123 Sakura Street</p>
+                        <p>Downtown District</p>
+                        <p>New York, NY 10001</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>✉️ Email</h3>
+                        <p>info@aurora-restaurant.com</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>🕐 Opening Hours</h3>
+                        <p>Monday - Thursday: 11:00 AM - 10:00 PM</p>
+                        <p>Friday - Saturday: 11:00 AM - 11:00 PM</p>
+                        <p>Sunday: 12:00 PM - 9:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
