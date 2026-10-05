@@ -105,20 +105,78 @@ function addDishImages() {
 }
 
 // Contact Form Submission
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const feedbackEl = document.getElementById('formSuccessMessage');
+    
     const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const message = formData.get('message');
+    const name = (formData.get('name') || '').trim();
+    const email = (formData.get('email') || '').trim();
+    const phone = (formData.get('phone') || '').trim();
+    const message = (formData.get('message') || '').trim();
     
-    // Simulate form submission
-    alert(`Thank you, ${name}! Your message has been sent. We'll get back to you soon.`);
+    if (!name || !email || !message) {
+        if (feedbackEl) {
+            feedbackEl.textContent = 'Please fill out all required fields.';
+            feedbackEl.style.background = 'rgba(211, 47, 47, 0.1)';
+            feedbackEl.style.color = '#c62828';
+            feedbackEl.style.display = 'block';
+        }
+        return;
+    }
     
-    // Reset form
-    contactForm.reset();
+    const originalBtnText = submitBtn ? submitBtn.textContent : 'Send Message';
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+    }
+    
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, phone, message })
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+            if (feedbackEl) {
+                feedbackEl.textContent = `Thank you, ${name}! Your message has been sent to our team.`;
+                feedbackEl.style.background = 'rgba(46, 125, 50, 0.12)';
+                feedbackEl.style.color = '#1b5e20';
+                feedbackEl.style.display = 'block';
+                setTimeout(() => {
+                    feedbackEl.style.display = 'none';
+                }, 6000);
+            }
+            contactForm.reset();
+        } else {
+            if (feedbackEl) {
+                feedbackEl.textContent = result.error || 'Failed to send message. Please try again.';
+                feedbackEl.style.background = 'rgba(211, 47, 47, 0.1)';
+                feedbackEl.style.color = '#c62828';
+                feedbackEl.style.display = 'block';
+            }
+        }
+    } catch (err) {
+        console.error('Contact form submission error:', err);
+        if (feedbackEl) {
+            feedbackEl.textContent = 'An error occurred while sending your message. Please try again.';
+            feedbackEl.style.background = 'rgba(211, 47, 47, 0.1)';
+            feedbackEl.style.color = '#c62828';
+            feedbackEl.style.display = 'block';
+        }
+    } finally {
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        }
+    }
 });
 
 // Keyboard navigation
